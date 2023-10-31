@@ -93,8 +93,11 @@ function getPerfectPartner($surname, $name, $patronymic, $persons) {
     } while ($gender === $randomGender || $gender === 0 || $randomGender === 0);
     
     $procent = mt_rand(50, 100) / 100;
+
+    $shortNameMan = getShortName($fullname);
+    $$shortNameWomen= getShortName($randomFullname);
     
-    $result = $fullname . ' + ' . $randomFullname . ' = ';
+    $result = $shortNameMan . ' + ' . $$shortNameWomen . ' = ';
     $result .= '♡ Идеально на ' . number_format($procent * 100, 2) . '% ♡';
     
     return $result;
